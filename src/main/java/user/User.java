@@ -39,7 +39,7 @@ public class User {
 
 
     public String toString() {
-        return "логин: " + login + ", пароль: " + password + ", id: " + id + ", имя" + name;
+        return "логин: " + login + ", пароль: " + password + ", id: " + id + ", имя: " + name;
 
 
     }
