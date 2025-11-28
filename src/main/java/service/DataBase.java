@@ -1,18 +1,18 @@
 package service;
 
 import user.User;
-import user.UserToUserMessage;
+import user.UserChat;
 
 public class DataBase {
-    private UserToUserMessage[] userMessages;
+    private UserChat[] userMessages;  // ИЗМЕНИЛ UserToUserMessage на UserChat
     private int messageCount;
 
     public DataBase() {
-        this.userMessages = new UserToUserMessage[1000];
+        this.userMessages = new UserChat[1000];  // ИЗМЕНИЛ UserToUserMessage на UserChat
         this.messageCount = 0;
     }
 
-    public void addMessage(UserToUserMessage message) {
+    public void addMessage(UserChat message) {  // Оставляем UserChat
         if (messageCount < userMessages.length) {
             userMessages[messageCount] = message;
             messageCount++;
@@ -24,7 +24,7 @@ public class DataBase {
         boolean found = false;
 
         for (int i = 0; i < messageCount; i++) {
-            UserToUserMessage msg = userMessages[i];
+            UserChat msg = userMessages[i];  // ИЗМЕНИЛ UserToUserMessage на UserChat
             if (msg.getFromUser().getLogin().equals(user.getLogin()) ||
                     msg.getToUser().getLogin().equals(user.getLogin())) {
                 msg.printMessage();
