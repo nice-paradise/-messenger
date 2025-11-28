@@ -1,5 +1,7 @@
 package user;
 
+import java.util.Scanner;
+
 public class User {
     private String login;
     private String password;
@@ -22,6 +24,7 @@ public class User {
 
 
     }
+
 
 
     public String getLogin() {
