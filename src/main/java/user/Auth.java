@@ -49,4 +49,27 @@ public class Auth {
         }
         return null;
     }
+
+    public User getUserByID(String id) {
+        for (int i = 0; i < countUsers; i++){
+            if (id.equals(dataBase[i].getId())){
+                return dataBase[i];
+            }
+        }
+        return null;
+    }
+    public void showAllUsers(){
+        System.out.println("Все пользователи: ");
+        for(int i = 0; i < countUsers; i++){
+            System.out.println(dataBase[i]);
+        }
+    }
+    public User getUserByLogin(String login) {
+        for (int i = 0; i < countUsers; i++) {
+            if (login.equals(dataBase[i].getLogin())) {
+                return dataBase[i];
+            }
+        }
+        return null;
+    }
 }

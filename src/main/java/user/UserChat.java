@@ -1,34 +1,30 @@
 package user;
 
 public class UserChat {
-
-
-
-
+    private User fromUser;
+    private User toUser;
     private String message;
-    private User user;
 
-    public UserChat(User user, String message) {
-        this.user = user;
+    public UserChat(User fromUser, User toUser, String message) {
+        this.fromUser = fromUser;
+        this.toUser = toUser;
         this.message = message;
     }
 
+    public User getFromUser() {
+        return fromUser;
+    }
+
+    public User getToUser() {
+        return toUser;
+    }
 
     public String getMessage() {
         return message;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    // Вывод сообщения
     public void printMessage() {
-        System.out.println(user.getName() + ": " + message);
+        System.out.println(fromUser.getName() + " -> " + toUser.getName() + ": " + message);
     }
-
-
-
-
-
 }
