@@ -3,21 +3,20 @@ package group;
 import user.User;
 
 public class Group {
+    public User[] members;
     private String name;
-    private User[] members; // пустой массив на 10 участников
     private int memberCount;
-    private String[] chatMessages; // массив сообщений чата
+    private String[] chatMessages;
     private int messageCount;
 
     public Group(String name) {
         this.name = name;
-        this.members = new User[10]; // пустой массив на 10 человек
+        this.members = new User[10];
         this.memberCount = 0;
-        this.chatMessages = new String[100]; // массив чата на 100 сообщений
+        this.chatMessages = new String[100];
         this.messageCount = 0;
     }
 
-    // Метод для добавления user в группу
     public void addUser(User user) {
         if (memberCount < members.length) {
             members[memberCount] = user;
@@ -28,7 +27,6 @@ public class Group {
         }
     }
 
-    // Метод для добавления сообщения в чат (будет вызываться из другого класса)
     public void addChatMessage(String message) {
         if (messageCount < chatMessages.length) {
             chatMessages[messageCount] = message;
@@ -38,7 +36,6 @@ public class Group {
         }
     }
 
-    // Показать всех участников группы
     public void showAllMembers() {
         System.out.println("\n=== Участники группы '" + name + "' ===");
         if (memberCount == 0) {
@@ -52,7 +49,6 @@ public class Group {
         System.out.println("Свободных мест: " + (members.length - memberCount));
     }
 
-    // Показать историю чата
     public void showChatHistory() {
         System.out.println("\n=== История чата группы '" + name + "' ===");
         if (messageCount == 0) {
@@ -64,7 +60,6 @@ public class Group {
         }
     }
 
-    // Геттеры
     public String getName() {
         return name;
     }
