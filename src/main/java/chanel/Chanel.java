@@ -1,10 +1,9 @@
-package сhanel;
+package chanel;
 
+import user.User;
+import user.Message;
 
-import User.User;
-import User.Message;
-
-public class Channel {
+public class Chanel {
     private String name;
     private User owner;
     private User[] subscribers = new User[25];
@@ -13,10 +12,15 @@ public class Channel {
     private Message[] messages = new Message[100];
     private int messageCount = 0;
 
-    public Channel(String name, User owner) {
+    public Chanel(String name, User owner) {
         this.name = name;
         this.owner = owner;
     }
+
+    public String getName() {
+        return name;
+    }
+
     public void subscribe(User user) {
         if (subscriberCount < subscribers.length) {
             subscribers[subscriberCount++] = user;
@@ -25,6 +29,7 @@ public class Channel {
             System.out.println("Невозможно подписаться!");
         }
     }
+
     public void unsubscribe(User user) {
         for (int i = 0; i < subscriberCount; i++) {
             if (subscribers[i].equals(user)) {
@@ -36,35 +41,37 @@ public class Channel {
                 return;
             }
         }
-        System.out.println(user.getUsername() + " не был подписан на канал");
+        System.out.println(user.getUsername() + " не был подписан");
     }
 
     public void postMessage(User from, String text) {
         if (!from.equals(owner)) {
-            System.out.println("Только владелец канала может отправлять сообщения!");
+            System.out.println("Только владелец может писать!");
             return;
         }
+
         if (messageCount < messages.length) {
             messages[messageCount++] = new Message(from, null, text);
-            System.out.println("В канал '" + name + "' отправлено сообщение: " + text);
+            System.out.println("Сообщение отправлено в '" + name + "': " + text);
         } else {
-            System.out.println("Канал переполнен, сообщение не отправлено");
+            System.out.println("Канал переполнен");
         }
     }
 
     public void showMessages(User user) {
-        boolean hasAccess = false;
-        if (user.equals(owner)) hasAccess = true;
+        boolean hasAccess = user.equals(owner);
+
         for (int i = 0; i < subscriberCount; i++) {
             if (subscribers[i].equals(user)) hasAccess = true;
         }
+
         if (!hasAccess) {
-            System.out.println("У вас нет доступа к сообщениям канала '" + name + "'");
+            System.out.println("Нет доступа к сообщениям канала '" + name + "'");
             return;
         }
 
         if (messageCount == 0) {
-            System.out.println("Сообщений пока нет");
+            System.out.println("Сообщений нет");
             return;
         }
 
@@ -74,3 +81,4 @@ public class Channel {
         }
     }
 }
+
