@@ -19,25 +19,7 @@ public class Auth {
         countUsers = 2;
 
     }
-    public void showMenu(){
 
-        System.out.println("Меню: ");
-        System.out.println(" написать человеку - 1\n написать в группу - 2\n посмотреть канал - 3 ");
-        Scanner scanner = new Scanner(System.in);
-        int move = scanner.nextInt();
-
-        switch (move){
-            case 1:
-                System.out.println("кому вы хотите написать? ");
-                break;
-            case 2:
-                System.out.println("выберите группу");
-                break;
-            case 3:
-                System.out.println("выберите канал");
-                break;
-        }
-    }
 
 
     public User signIn() {
