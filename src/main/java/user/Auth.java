@@ -10,8 +10,10 @@ public class Auth {
         dataBase = new User[100];
         dataBase[0] = new User("Askar11", "1234", "123456", "askar");
         dataBase[1] = new User("Ilnurka", "1234", "1234789", "ilnur");
-        countUsers = 2;
-    }
+        dataBase[2] = new User("Alba","1234","13141","albert");
+        dataBase[3] = new User("Tema","1243","653","artem");
+
+        countUsers = 4;
 
     public User signIn() {
         Scanner scanner = new Scanner(System.in);
@@ -47,7 +49,6 @@ public class Auth {
         return null;
     }
 
-    // ИСПРАВЛЕННЫЙ МЕТОД - не показываем пароли и ID
     public void showAllUsers(){
         System.out.println("\n=== ВСЕ ПОЛЬЗОВАТЕЛИ ===");
         for(int i = 0; i < countUsers; i++){
@@ -57,7 +58,6 @@ public class Auth {
         System.out.println("Всего пользователей: " + countUsers);
     }
 
-    // Альтернативный вариант - только имена
     public void showAllUsersSimple(){
         System.out.println("\n=== ПОЛЬЗОВАТЕЛИ ===");
         for(int i = 0; i < countUsers; i++){
@@ -65,7 +65,7 @@ public class Auth {
         }
     }
 
-    // Вариант с красивым форматированием
+
     public void showAllUsersFormatted(){
         System.out.println("\n┌─────────────────────────────┐");
         System.out.println("│        СПИСОК УЧАСТНИКОВ     │");
