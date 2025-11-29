@@ -50,7 +50,7 @@ public class Auth {
         return null;
     }
 
-    // ИСПРАВЛЕННЫЙ МЕТОД - не показываем пароли и ID
+
     public void showAllUsers(){
         System.out.println("\n=== ВСЕ ПОЛЬЗОВАТЕЛИ ===");
         for(int i = 0; i < countUsers; i++){
