@@ -14,7 +14,6 @@ public class Auth {
         dataBase[3] = new User("Tema","1243","653","artem");
 
         countUsers = 4;
-    }
 
     public User signIn() {
         Scanner scanner = new Scanner(System.in);
@@ -49,7 +48,6 @@ public class Auth {
         }
         return null;
     }
-
 
     public void showAllUsers(){
         System.out.println("\n=== ВСЕ ПОЛЬЗОВАТЕЛИ ===");
