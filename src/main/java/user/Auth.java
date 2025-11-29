@@ -49,7 +49,6 @@ public class Auth {
         return null;
     }
 
-    // ИСПРАВЛЕННЫЙ МЕТОД - не показываем пароли и ID
     public void showAllUsers(){
         System.out.println("\n=== ВСЕ ПОЛЬЗОВАТЕЛИ ===");
         for(int i = 0; i < countUsers; i++){
@@ -59,25 +58,6 @@ public class Auth {
         System.out.println("Всего пользователей: " + countUsers);
     }
 
-    // Альтернативный вариант - только имена
-    public void showAllUsersSimple(){
-        System.out.println("\n=== ПОЛЬЗОВАТЕЛИ ===");
-        for(int i = 0; i < countUsers; i++){
-            System.out.println((i+1) + ". " + dataBase[i].getName());
-        }
-    }
-
-    // Вариант с красивым форматированием
-    public void showAllUsersFormatted(){
-        System.out.println("\n┌─────────────────────────────┐");
-        System.out.println("│        СПИСОК УЧАСТНИКОВ     │");
-        System.out.println("├─────────────────────────────┤");
-        for(int i = 0; i < countUsers; i++){
-            System.out.printf("│ %-2d. %-15s (%-10s) │\n",
-                    (i+1), dataBase[i].getName(), dataBase[i].getLogin());
-        }
-        System.out.println("└─────────────────────────────┘");
-    }
 
     public User getUserByLogin(String login) {
         for (int i = 0; i < countUsers; i++) {
