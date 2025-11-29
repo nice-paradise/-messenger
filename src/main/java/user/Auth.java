@@ -10,7 +10,9 @@ public class Auth {
         dataBase = new User[100];
         dataBase[0] = new User("Askar11", "1234", "123456", "askar");
         dataBase[1] = new User("Ilnurka", "1234", "1234789", "ilnur");
-        countUsers = 2;
+        dataBase[2] = new User("Albert", "1234", "1234789", "albert");
+        dataBase[3] = new User("Artem", "1234", "1234789", "artem");
+        countUsers = 4;
     }
 
     public User signIn() {
