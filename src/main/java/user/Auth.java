@@ -13,7 +13,7 @@ public class Auth {
         dataBase[2] = new User("Alba","1234","13141","albert");
         dataBase[3] = new User("Tema","1243","653","artem");
 
-        countUsers = 2;
+        countUsers = 4;
     }
 
     public User signIn() {
